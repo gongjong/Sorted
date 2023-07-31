@@ -1,0 +1,17 @@
+#try1 -> solve
+
+def solution(array, commands):
+    answer = []
+    
+    for command in commands:
+        start, end, point = command
+        arr = array[start-1:end]
+        arr.sort()
+        answer.append(arr[point-1])
+    
+    return answer
+
+
+#다른 사람 풀이
+def solution(array, commands):
+    return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
